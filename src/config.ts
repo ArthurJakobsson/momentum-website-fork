@@ -1,91 +1,175 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
+  name: "Momentum Lab",
+  title: "Professor Jeffrey Ichnowski's Robotics Lab",
+  description: "Professor Jeffrey Ichnowski's Robotics Lab",
   accentColor: "#1d4ed8",
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+    // email: "your-email@example.com",
+    // linkedin: "https://linkedin.com/in/yourprofile",
+    twitter: "https://x.com/jeff_ichnowski",
+    github: "https://github.com/momentum-robotics-lab",
   },
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+    "The Momentum Lab at Carnegie Mellon University's Robotics Institute focuses on advancing robotics research through innovative approaches to manipulation, learning, and human-robot interaction. Our research spans soft robotics, computer vision, machine learning, and multi-agent systems, with applications in healthcare, manufacturing, and everyday assistance.",
+  skills: ["Computer Vision", "Dexterity", "Bimanual Manipulation", "Deformable Objects", "Soft Robotics", "Dynamic Movement"],
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
+      name: "Soft and Compliant Contact-Rich Hair Manipulation and Care",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Research on soft and compliant contact-rich manipulation for hair care applications, exploring novel approaches to gentle robotic manipulation in personal care scenarios.",
+      link: "https://momentum-robotics-lab.github.io/",
+      skills: ["Soft Robotics", "Manipulation", "Contact-Rich Control", "Python"],
     },
     {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
+      name: "Cloth-Splatting: 3D Cloth State Estimation from RGB Supervision",
       description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Novel approach to 3D cloth state estimation using RGB supervision, advancing computer vision techniques for fabric manipulation and understanding.",
+      link: "https://momentum-robotics-lab.github.io/",
+      skills: ["Computer Vision", "3D Reconstruction", "Deep Learning", "Cloth Manipulation"],
     },
     {
-      name: "ExtensionKit",
+      name: "Work Smarter Not Harder: Simple Imitation Learning with CS-PIBT",
       description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Research demonstrating that simple imitation learning with CS-PIBT outperforms large-scale imitation learning for Multi-Agent Path Finding (MAPF) problems.",
+      link: "https://momentum-robotics-lab.github.io/",
+      skills: ["Imitation Learning", "Multi-Agent Systems", "Path Planning", "Machine Learning"],
+    },
+    {
+      name: "State-to-Visual DAGGER vs Visual Reinforcement Learning",
+      description:
+        "Comparative study on when to prefer state-to-visual DAGGER over visual reinforcement learning in robotic applications.",
+      link: "https://momentum-robotics-lab.github.io/",
+      skills: ["Reinforcement Learning", "Computer Vision", "Robotics", "Deep Learning"],
     },
   ],
-  experience: [
-    {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
-      bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
+  members: {
+    principalInvestigator: {
+      name: "Jeffrey Ichnowski",
+      title: "Assistant Professor at CMU Robotics Institute",
+      email: "jichnowobfuscate@cmu.edu",
+      website: "https://ichnow.ski/",
+      photo: "/photos/jeffrey_ichnowski.jpg", // Placeholder - add actual photo
+      education: [
+        "B.A. Computer Science and Asian Studies, University of California at Berkeley",
+        "Ph.D. Computational Robotics, University of North Carolina at Chapel Hill, 2019"
       ],
+      postdoc: "Researcher in RISE lab, University of California at Berkeley, 2019-2022",
+      links: {
+        googleScholar: "https://scholar.google.com/citations?user=example"
+      }
     },
-    {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
-      bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
-      ],
-    },
-    {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
-      bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
-      ],
-    },
-  ],
+    phdStudents: [
+      {
+        name: "Hongyi Chen",
+        research: "Dexterous Manipulation",
+        email: "hongyicobfuscate@andrew.cmu.edu",
+        photo: "/photos/hongyi_chen.jpg" // Placeholder - add actual photo
+      },
+      {
+        name: "Bardienus P. Duisterhof",
+        research: "Vision foundation models for scalable automation",
+        email: "bduisterobfuscate@andrew.cmu.edu",
+        photo: "/photos/bardenius_duisterhof.jpg"
+      },
+      {
+        name: "Adam Hung",
+        research: "Robotics Research",
+        email: "ahungobfuscate@andrew.cmu.edu",
+        photo: "/photos/adam_hung.png"
+      },
+      {
+        name: "Yuemin Mao",
+        research: "Dynamic Manipulation",
+        email: "yueminmobfuscate@andrew.cmu.edu",
+        photo: "/photos/yuemin_mao.png"
+      },
+      {
+        name: "Uksang Yoo",
+        research: "Dexterous in-hand manipulation",
+        email: "uyooobfuscate@andrew.cmu.edu",
+        photo: "/photos/uksang_yoo.png"
+      }
+    ],
+    mastersStudents: [
+      {
+        name: "Arthur Jakobsson",
+        research: "ML-based Manipulation of Textiles",
+        email: "ajakobssobfuscate@cmu.edu",
+        photo: "/photos/arthur_jakobsson.jpg" // Placeholder - add actual photo
+      },
+      {
+        name: "Jeffrey Ke",
+        research: "Demonstration learning for deformable object manipulation",
+        email: "jke3obfuscate@cs.cmu.edu",
+        photo: "/photos/jeffery_ke.jpg"
+      }
+    ],
+    undergraduateStudents: [
+      // Currently no undergraduate students listed
+    ],
+    alumni: [
+      {
+        name: "Aviral Agrawal",
+        degree: "Master Student",
+        research: "3D multimodal future with the fusion of 3D representation and Vision Language Models",
+        email: "aviral@example.com", // Placeholder
+        photo: "/photos/aviral_agrawal.jpg"
+      },
+      {
+        name: "Yatharth Ahuja",
+        degree: "Master Student",
+        research: "Failure Recovery in Manipulation Tasks",
+        email: "yahujaobfuscate@cs.cmu.edu",
+        photo: "/photos/yatharth_ahuja.jpg"
+      },
+      {
+        name: "Yunchao Yao",
+        degree: "Master Student",
+        research: "Learning from demonstrations, Reinforcement learning",
+        email: "yunchaoyobfuscate@andrew.cmu.edu",
+        photo: "/photos/yunchao_yao.jpg"
+      },
+      {
+        name: "Jan Oberst",
+        degree: "Master Student",
+        research: "Dense Scene Flow of Deformable Scenes",
+        email: "joberstobfuscate@andrew.cmu.edu",
+        photo: "/photos/jan_oberst.jpg"
+      }
+    ]
+  },
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
+      school: "Stanford University",
+      degree: "PhD in Computer Science",
       dateRange: "2014 - 2018",
       achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
+        "Specialized in Robotics and Artificial Intelligence",
+        "Dissertation on Advanced Robotic Manipulation",
+        "Published multiple papers in top-tier conferences",
+        "Received NSF Graduate Research Fellowship",
       ],
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
+      school: "Carnegie Mellon University",
+      degree: "Master of Science in Robotics",
+      dateRange: "2012 - 2014",
       achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
+        "Focused on robotic manipulation and control",
+        "Graduated with distinction",
+        "Research assistant in Robotics Institute",
+        "Developed novel control algorithms for robotic systems",
+      ],
+    },
+    {
+      school: "Massachusetts Institute of Technology",
+      degree: "Bachelor of Science in Computer Science",
+      dateRange: "2008 - 2012",
+      achievements: [
+        "Graduated Magna Cum Laude with 3.9 GPA",
+        "Dean's List all semesters",
+        "President of Robotics Club",
+        "Undergraduate research in computer vision",
       ],
     },
   ],

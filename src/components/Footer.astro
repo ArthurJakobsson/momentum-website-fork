@@ -126,7 +126,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
           <a
             href="#about"
             class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
-            >About</a
+            >About Lab</a
           >
           {
             hasProjects && (
@@ -134,7 +134,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                 href="#projects"
                 class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
-                Projects
+                Research
               </a>
             )
           }
@@ -144,7 +144,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                 href="#experience"
                 class="text-sm text-gray-600 hover:text-gray-800 transition-colors"
               >
-                Experience
+                Team
               </a>
             )
           }
@@ -162,6 +162,9 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         <p class="text-sm text-gray-500">
           © {new Date().getFullYear()}
           {siteConfig.name}. All rights reserved.
+        </p>
+        <p class="text-xs text-gray-400">
+          Built with the <a href="https://github.com/RyanFitzgerald/devportfolio" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 transition-colors">DevPortfolio template</a> by <a href="https://x.com/rfitzio" target="_blank" rel="noopener noreferrer" class="hover:text-gray-600 transition-colors">Ryan Fitzgerald</a>
         </p>
       </div>
     </div>
