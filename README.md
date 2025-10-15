@@ -1,187 +1,151 @@
-<img width="1943" height="1093" alt="image" src="https://github.com/user-attachments/assets/cc2ff955-17c2-48c7-81c8-479a0f061850" />
+# Momentum Lab Website
 
-# DevPortfolio Template
+The official website for the Momentum Lab at Carnegie Mellon University's Robotics Institute. This site showcases our research, members, publications, and selected works in robotics, manipulation, and human-robot interaction.
 
-A modern, minimalist portfolio template built with Astro and Tailwind CSS. Perfect for developers looking to showcase their skills, experience, and projects in a clean, professional way.
+## 🌐 Live Site
 
-This was completely rebuilt from the ground up from V1. This template was built to be entirely ready to go with a quick config edit (see below) but also provides the ability to easily extend in whatever way you want.
+Visit our website at: **[https://momentum-robotics-lab.github.io/](https://momentum-robotics-lab.github.io/)**
 
-This template also comes with `CLAUDE.md` and `.cursor/rules` files for easy integration with your existing AI workflows.
+## 🏗️ Built With
 
-> **📬 Connect & Share!**  
-> For questions and updates, feel free to reach out on [**X (Twitter)**](https://x.com/rfitzio).  
-> If you've built and published your personal site with this template, I'd love to see it! Send me a DM 🚀
-
-## Preview
-
-To view a live preview of the site, [click here](https://ryanfitzgerald.github.io/devportfolio/).
-
-## Built With
-
-- **[Astro](https://astro.build/)** - Static site generator for modern web apps
+- **[Astro](https://astro.build/)** - Modern static site generator
 - **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[Tabler Icons](https://tabler.io/icons)** - Free and open source icons
-- **TypeScript** - For type-safe configuration
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe configuration
+- **GitHub Actions** - Automated deployment
 
-## Updating the Template
+## 📊 Managing Publications
 
-### Configuration
+The website automatically displays publications for each lab member. To update the publications:
 
-The template is designed to be easily customizable through the `src/config.ts` file. This single file controls:
-
-- **Personal Information**: Name, title, description
-- **Accent Color**: Primary color theme (changing this will change the accent color site wide)
-- **Social Links**: Email, LinkedIn, Twitter, GitHub (all optional)
-- **About Section**: Personal bio/description
-- **Skills**: List of technical skills
-- **Projects**: Project showcase with descriptions and links
-- **Experience**: Work history with bullet points
-- **Education**: Educational background and achievements
-
-If skills, projects, experience, or education are removed from the config, those sections will be hidden entirely.
-
-### Example structures
-
-Here's what the config data structure looks like for each section:
-
-#### Basic Information
-```typescript
-name: "Your Name",
-title: "Your Job Title",
-description: "Brief site description",
-accentColor: "#1d4ed8", // Hex color for theme
+### Advanced Update (Recommended)
+```bash
+npm run fetch-publications-advanced
 ```
 
-#### Social Links (all optional)
+The advanced script provides:
+- Better error handling
+- Progress tracking
+- Detailed logging
+- More robust data fetching
+
+### Manual Publication Management
+
+Publications are stored in `public/publications.json`. You can:
+1. Edit this file directly for quick updates
+2. Use the npm scripts for automatic fetching from Google Scholar
+3. The member pages automatically load publications based on author names
+
+## 👥 Adding New Members
+
+To add a new lab member:
+
+1. **Update `src/config.ts`** - Add the member to the appropriate section (PhD Students, Master Students, etc.)
+2. **Add member photo** - Place the photo in `public/photos/` with naming convention: `firstname_lastname.jpg`
+3. **Publications** - The member's publications will be automatically fetched and displayed on their individual page
+
+Example member configuration:
 ```typescript
-social: {
-  email: "your-email@example.com",
-  linkedin: "https://linkedin.com/in/yourprofile",
-  twitter: "https://twitter.com/yourprofile", 
-  github: "https://github.com/yourusername",
+{
+  name: "Jane Doe",
+  email: "jane@cmu.edu",
+  photo: "/photos/jane_doe.jpg",
+  website: "https://janedoe.com",
+  googleScholar: "https://scholar.google.com/citations?user=USER_ID",
+  research: "Computer Vision for Robotics"
 }
 ```
 
-#### About Section
-```typescript
-aboutMe: "A paragraph describing yourself, your background, interests, and what you're passionate about. This appears in the About section of your portfolio."
-```
+## 🎬 Managing Videos
 
-#### Skills
-```typescript
-skills: ["JavaScript", "React", "Node.js", "Python", "AWS", "Docker"]
-```
+Research videos are stored in `public/videos/` and can be embedded in the Hero section:
 
-#### Projects
-```typescript
-projects: [
-  {
-    name: "Project Name",
-    description: "Brief description of what the project does and its impact",
-    link: "https://github.com/yourusername/project",
-    skills: ["React", "Node.js", "AWS"], // Technologies used
-  }
-]
-```
+1. **Add videos** to `public/videos/`
+2. **Update video list** in `src/components/Hero.astro`
+3. **Videos auto-play** in a loop on the homepage
 
-#### Experience
-```typescript
-experience: [
-  {
-    company: "Company Name",
-    title: "Your Job Title",
-    dateRange: "Jan 2022 - Present",
-    bullets: [
-      "Led development of microservices architecture serving 1M+ users",
-      "Reduced API response times by 40% through optimization",
-      "Mentored team of 5 junior developers",
-    ],
-  }
-]
-```
+## 🚀 Local Development
 
-#### Education
-```typescript
-education: [
-  {
-    school: "University Name",
-    degree: "Bachelor of Science in Computer Science",
-    dateRange: "2014 - 2018",
-    achievements: [
-      "Graduated Magna Cum Laude with 3.8 GPA",
-      "Dean's List all semesters",
-      "President of Computer Science Club"
-    ]
-  }
-]
-```
+To run the site locally:
 
-### Icons
-
-The template uses [Tabler Icons](https://tabler.io/icons) for all icons. If you wish to add more icons and have it look consistent with what's already there, you can browse through their extensive icon library.
-
-## Project Structure
-
-```
-devportfolio/
-├── public/
-│   └── favicon.svg          # Site favicon
-├── src/
-│   ├── components/          # Astro components
-│   │   ├── About.astro      # About section
-│   │   ├── Education.astro  # Education section
-│   │   ├── Experience.astro # Work experience section
-│   │   ├── Footer.astro     # Site footer
-│   │   ├── Header.astro     # Navigation header
-│   │   ├── Hero.astro       # Hero/intro section
-│   │   └── Projects.astro   # Projects showcase
-│   ├── pages/
-│   │   └── index.astro      # Main page layout
-│   ├── styles/
-│   │   └── global.css       # Global styles
-│   └── config.ts            # Site configuration
-├── astro.config.mjs         # Astro configuration
-├── package.json             # Project dependencies
-├── tailwind.config.js       # Tailwind configuration
-└── tsconfig.json            # TypeScript configuration
-```
-
-## Local Development
-
-If you'd like to run it locally:
-
-```
-git clone https://github.com/RyanFitzgerald/devportfolio.git
-cd devportfolio
+```bash
+git clone https://github.com/momentum-robotics-lab/momentum-robotics-lab.github.io.git
+cd momentum-robotics-lab.github.io
 npm install
-```
-
-After that, start up the Astro dev server with:
-
-```
 npm run dev
 ```
 
-## Deployment
+The site will be available at `http://localhost:4321`
 
-The template can be deployed to any static hosting service easily (and in most cases, completely free). Here are some options:
+## 📁 Project Structure
 
-- To deploy with Netlify, [click here](https://docs.astro.build/en/guides/deploy/netlify/).
-- To deploy with Vercel, [click here](https://docs.astro.build/en/guides/deploy/vercel/).
-- To deploy with GitHub Pages, [click here](https://docs.astro.build/en/guides/deploy/github/).
-- To deploy with Cloudflare Pages, [click here](https://docs.astro.build/en/guides/deploy/cloudflare/).
-- To deploy with Render, [click here](https://docs.astro.build/en/guides/deploy/render/).
+```
+momentum-lab-website/
+├── public/
+│   ├── photos/           # Member photos
+│   ├── videos/           # Research videos
+│   └── publications.json # Publications data
+├── src/
+│   ├── components/       # Astro components
+│   │   ├── Hero.astro    # Homepage hero with videos
+│   │   ├── Members.astro # Members showcase
+│   │   ├── Projects.astro # Selected works
+│   │   └── ...
+│   ├── pages/
+│   │   ├── index.astro   # Main homepage
+│   │   └── members/      # Individual member pages
+│   ├── layouts/
+│   │   └── Layout.astro  # Base layout template
+│   ├── utils/
+│   │   └── publications.ts # Publication utilities
+│   └── config.ts         # Site configuration
+├── scripts/
+│   ├── fetch-publications.js        # Basic publication fetcher
+│   └── fetch-publications-advanced.js # Advanced publication fetcher
+└── .github/workflows/
+    └── deploy.yml        # GitHub Actions deployment
+```
 
-Want to deploy somewhere else? Find more guides [here](https://docs.astro.build/en/guides/deploy/).
+## 🔄 Deployment
 
-## Changelog
+The site is automatically deployed via GitHub Actions when changes are pushed to the `master` branch. The deployment process:
 
-To view the changelog, see CHANGELOG.md.
+1. **Builds** the Astro site
+2. **Uploads** artifacts to GitHub Pages
+3. **Deploys** to https://momentum-robotics-lab.github.io/
 
-## License
+### Manual Deployment
 
-This project is fully and completely MIT. See LICENSE.md.
+If needed, you can manually trigger deployment:
+1. Go to the [Actions tab](https://github.com/momentum-robotics-lab/momentum-robotics-lab.github.io/actions)
+2. Click "Deploy to GitHub Pages"
+3. Click "Run workflow"
 
-## Questions?
+## 🛠️ Key Features
 
-Feel free to reach out on [X (Twitter)](https://x.com/rfitzio) if you have any questions or need help.
+- **Responsive Design** - Works on all devices
+- **Automatic Publications** - Fetches from Google Scholar
+- **Individual Member Pages** - Dedicated pages for each lab member
+- **Video Showcase** - Auto-playing research videos
+- **Modern UI** - Clean, professional design
+- **Fast Loading** - Optimized static site generation
+
+## 📝 Configuration
+
+Main configuration is in `src/config.ts`:
+- Lab information and description
+- Member lists and details
+- Research topics
+- Selected works/projects
+- Contact information
+
+## 🙏 Acknowledgments
+
+This website is based on the excellent [DevPortfolio Template](https://github.com/RyanFitzgerald/devportfolio) by [Ryan Fitzgerald](https://github.com/RyanFitzgerald).
+
+**Template edited and modified for use for Momentum Lab by [Arthur Jakobsson](https://arthurjakobsson.com/)**
+
+The original template provided a solid foundation which was then customized to showcase our robotics research, lab members, and publications with automated Google Scholar integration.
+
+---
+
+**Momentum Lab** - Advancing robotics through innovative manipulation and learning approaches.
