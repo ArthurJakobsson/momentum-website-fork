@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Momentum Lab",
-  title: "Carnegie Mellon University Robotics Institute",
+  title: "Carnegie Mellon University's Robotics Institute",
   description: "CMU's Momentum Robotics Lab",
   accentColor: "#1d4ed8",
   social: {
