@@ -1,54 +1,12 @@
+// Export the site config for use in scripts
 export const siteConfig = {
-  name: "Momentum Lab",
-  title: "Professor Jeffrey Ichnowski's Robotics Lab",
-  description: "Professor Jeffrey Ichnowski's Robotics Lab",
-  accentColor: "#1d4ed8",
-  social: {
-    // email: "your-email@example.com",
-    // linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/jeff_ichnowski",
-    github: "https://github.com/momentum-robotics-lab",
-  },
-  aboutMe:
-    "The Momentum Lab at Carnegie Mellon University's Robotics Institute focuses on advancing robotics research through innovative approaches to manipulation, learning, and human-robot interaction. Our research spans soft robotics, computer vision, machine learning, and multi-agent systems, with applications in healthcare, manufacturing, and everyday assistance.",
-  skills: ["Computer Vision", "Dexterity", "Bimanual Manipulation", "Deformable Objects", "Soft Robotics", "Dynamic Movement"],
-  projects: [
-    {
-      name: "Soft and Compliant Contact-Rich Hair Manipulation and Care",
-      description:
-        "Research on soft and compliant contact-rich manipulation for hair care applications, exploring novel approaches to gentle robotic manipulation in personal care scenarios.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Soft Robotics", "Manipulation", "Contact-Rich Control", "Python"],
-    },
-    {
-      name: "Cloth-Splatting: 3D Cloth State Estimation from RGB Supervision",
-      description:
-        "Novel approach to 3D cloth state estimation using RGB supervision, advancing computer vision techniques for fabric manipulation and understanding.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Computer Vision", "3D Reconstruction", "Deep Learning", "Cloth Manipulation"],
-    },
-    {
-      name: "Work Smarter Not Harder: Simple Imitation Learning with CS-PIBT",
-      description:
-        "Research demonstrating that simple imitation learning with CS-PIBT outperforms large-scale imitation learning for Multi-Agent Path Finding (MAPF) problems.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Imitation Learning", "Multi-Agent Systems", "Path Planning", "Machine Learning"],
-    },
-    {
-      name: "State-to-Visual DAGGER vs Visual Reinforcement Learning",
-      description:
-        "Comparative study on when to prefer state-to-visual DAGGER over visual reinforcement learning in robotic applications.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Reinforcement Learning", "Computer Vision", "Robotics", "Deep Learning"],
-    },
-  ],
   members: {
     principalInvestigator: {
       name: "Jeffrey Ichnowski",
       title: "Assistant Professor at CMU Robotics Institute",
       email: "jichnow@cmu.edu",
       website: "https://ichnow.ski/",
-      photo: "/photos/jeffrey_ichnowski.jpg", // Placeholder - add actual photo
+      photo: "/photos/jeffrey_ichnowski.jpg",
       education: [
         "B.A. Computer Science and Asian Studies, University of California at Berkeley",
         "Ph.D. Computational Robotics, University of North Carolina at Chapel Hill, 2019"
@@ -119,7 +77,7 @@ export const siteConfig = {
         name: "Aviral Agrawal",
         degree: "Master Student",
         research: "3D multimodal future with the fusion of 3D representation and Vision Language Models",
-        email: "aviral@example.com", // Placeholder
+        email: "aviral@example.com",
         photo: "/photos/aviral_agrawal.jpg",
         googleScholar: "https://scholar.google.com/citations?user=NiW49k4AAAAJ"
       },
@@ -148,40 +106,5 @@ export const siteConfig = {
         googleScholar: "https://scholar.google.com/citations?user=-jYQuzMAAAAJ"
       }
     ]
-  },
-  education: [
-    {
-      school: "Stanford University",
-      degree: "PhD in Computer Science",
-      dateRange: "2014 - 2018",
-      achievements: [
-        "Specialized in Robotics and Artificial Intelligence",
-        "Dissertation on Advanced Robotic Manipulation",
-        "Published multiple papers in top-tier conferences",
-        "Received NSF Graduate Research Fellowship",
-      ],
-    },
-    {
-      school: "Carnegie Mellon University",
-      degree: "Master of Science in Robotics",
-      dateRange: "2012 - 2014",
-      achievements: [
-        "Focused on robotic manipulation and control",
-        "Graduated with distinction",
-        "Research assistant in Robotics Institute",
-        "Developed novel control algorithms for robotic systems",
-      ],
-    },
-    {
-      school: "Massachusetts Institute of Technology",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2008 - 2012",
-      achievements: [
-        "Graduated Magna Cum Laude with 3.9 GPA",
-        "Dean's List all semesters",
-        "President of Robotics Club",
-        "Undergraduate research in computer vision",
-      ],
-    },
-  ],
+  }
 };

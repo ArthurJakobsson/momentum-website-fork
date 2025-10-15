@@ -1,0 +1,174 @@
+---
+import { siteConfig } from "../../config";
+import Layout from "../../layouts/Layout.astro";
+import { getPublicationsForMember } from "../../utils/publications";
+
+export async function getStaticPaths() {
+  const allMembers = [
+    siteConfig.members.principalInvestigator,
+    ...siteConfig.members.phdStudents,
+    ...siteConfig.members.mastersStudents,
+    ...siteConfig.members.undergraduateStudents,
+    ...siteConfig.members.alumni
+  ];
+
+  return allMembers.map((member) => ({
+    params: { slug: member.name.toLowerCase().replace(/\s+/g, '-') },
+    props: { member },
+  }));
+}
+
+const { member } = Astro.props;
+
+// Fetch publications for this member
+const publications = await getPublicationsForMember(member.name);
+---
+
+<Layout title={`${member.name} - Momentum Lab`}>
+  <div class="min-h-screen bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-3xl font-bold text-gray-900">{member.name}</h1>
+            <p class="text-lg text-gray-600 mt-1">{member.research || member.title}</p>
+          </div>
+          <a
+            href="/#members"
+            class="text-sm px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors"
+          >
+            ← Back to Members
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Profile Card -->
+        <div class="lg:col-span-1">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-8">
+            <div class="text-center mb-6">
+              <img
+                src={member.photo}
+                alt={member.name}
+                class="w-32 h-32 rounded-full object-cover border-4 border-gray-200 mx-auto mb-4"
+                onerror="this.src='https://via.placeholder.com/128x128?text=Photo'"
+              />
+              <h2 class="text-xl font-semibold text-gray-900">{member.name}</h2>
+              <p class="text-gray-600 mt-1">
+                {member.research || member.title || member.degree}
+              </p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">Contact</h3>
+                <div class="space-y-2">
+                  <a
+                    href={`mailto:${member.email}`}
+                    class="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Email
+                  </a>
+
+                  {member.website && (
+                    <a
+                      href={member.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    >
+                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                      </svg>
+                      Website
+                    </a>
+                  )}
+
+                  {member.googleScholar && (
+                    <a
+                      href={member.googleScholar}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="flex items-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    >
+                      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                      </svg>
+                      Google Scholar
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <!-- Education (for PI) -->
+              {member.education && (
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">Education</h3>
+                  <ul class="space-y-1">
+                    {member.education.map((edu) => (
+                      <li class="text-sm text-gray-600">• {edu}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <!-- Postdoc (for PI) -->
+              {member.postdoc && (
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">Postdoctoral Training</h3>
+                  <p class="text-sm text-gray-600">{member.postdoc}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        <!-- Publications -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Publications</h2>
+
+            {publications.length > 0 ? (
+              <div class="space-y-4">
+                {publications.map((pub, index) => (
+                  <div class="border-l-4 border-blue-500 pl-4 py-2">
+                    <h3 class="font-semibold text-gray-900 mb-1">
+                      <a
+                        href={pub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-blue-600 transition-colors"
+                      >
+                        {pub.title}
+                      </a>
+                    </h3>
+                    <p class="text-sm text-gray-600 mb-1">{pub.authors}</p>
+                    <p class="text-sm text-gray-500">
+                      <span class="font-medium">{pub.venue}</span> • {pub.year}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div class="text-center py-12">
+                <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+                <p class="text-gray-500">Publications will be automatically loaded from Google Scholar</p>
+                <p class="text-sm text-gray-400 mt-2">Run the publications script to populate this section</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>
