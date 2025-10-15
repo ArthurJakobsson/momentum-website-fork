@@ -112,7 +112,7 @@ export const siteConfig = {
     mastersStudents: [
       {
         name: "Arthur Jakobsson",
-        research: "ML-based Manipulation of Textiles",
+        research: "Dexterous and deformable object manipulation",
         email: "ajakobss@cmu.edu",
         photo: "/photos/arthur_jakobsson.jpg",
         googleScholar: "https://scholar.google.com/citations?user=Uo2ibwcAAAAJ",
