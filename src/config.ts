@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Momentum Lab",
-  title: "Professor Jeffrey Ichnowski's Robotics Lab",
-  description: "Professor Jeffrey Ichnowski's Robotics Lab",
+  title: "Carnegie Mellon University Robotics Institute",
+  description: "CMU's Momentum Robotics Lab",
   accentColor: "#1d4ed8",
   social: {
     // email: "your-email@example.com",
