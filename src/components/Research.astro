@@ -1,0 +1,65 @@
+---
+import { siteConfig } from "../config";
+
+const topics = [
+  {
+    title: "Dynamic Manipulation",
+    description:
+      "Control and learning methods for high-speed, contact-rich interactions where timing, compliance, and dynamics are critical to task success.",
+  },
+  {
+    title: "Dextrous Manipulation",
+    description:
+      "In-hand and multi-finger manipulation with precise force/pose control, leveraging tactile, proprioceptive, and vision feedback for robust policies.",
+  },
+  {
+    title: "Soft Robotics",
+    description:
+      "Design and control of soft end-effectors and compliance-aware planners enabling safe, adaptive interaction with deformable objects and people.",
+  },
+  {
+    title: "3D Vision Foundation Models",
+    description:
+      "Foundation models for 3D perception and understanding that power scalable recognition, reconstruction, and policy learning in real-world scenes.",
+  },
+];
+
+const hasResearch = topics.length > 0;
+---
+
+{
+  hasResearch && (
+    <section id="research" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+              Research Topics
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="grid grid-cols-1 gap-6">
+              {topics.map((topic) => (
+                <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
+                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                    {topic.title}
+                  </h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    {topic.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+

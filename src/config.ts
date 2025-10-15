@@ -14,32 +14,36 @@ export const siteConfig = {
   skills: ["Computer Vision", "Dexterity", "Bimanual Manipulation", "Deformable Objects", "Soft Robotics", "Dynamic Movement"],
   projects: [
     {
+      name: "RaySt3R: Predicting Novel Depth Maps for Zero-Shot Object Completion",
+      description:
+        "Single masked RGB-D to complete 3D shapes by predicting novel-view depth, masks, and confidences, fusing them for SOTA 3D completion.",
+      link: "https://rayst3r.github.io/",
+      subtitle: "Bardienus P. Duisterhof, Jan Oberst, Bowen Wen, Stan Birchfield, Deva Ramanan, Jeffrey Ichnowski",
+      skills: ["3D Vision", "Novel View Synthesis", "Depth Prediction", "Transformers"],
+    },
+    {
+      name: "Web2Grasp: Learning Functional Grasps from Web Images of Hand-Object Interactions",
+      description:
+        "Extract functional human grasps from web HOI images, retarget to robot hands, and augment in simulation to train dexterous grasping models.",
+      link: "https://arxiv.org/abs/2505.05517",
+      subtitle: "Hongyi Chen, Yunchao Yao, Yufei Ye, Zhixuan Xu, Homanga Bharadhwaj, Jiashun Wang, Shubham Tulsiani, Zackory Erickson, Jeffrey Ichnowski",
+      skills: ["Dexterous Manipulation", "HOI", "Sim2Real", "Learning from Web Data"],
+    },
+    {
+      name: "Soft Robotic Dynamic In-Hand Pen Spinning",
+      description:
+        "Dynamic in-hand manipulation with a soft hand via trial-and-error from real-world data, discovering grasping/spinning primitives for robust pen spinning and generalizing to other objects.",
+      link: "https://arxiv.org/abs/2411.12734",
+      subtitle: "Yunchao Yao, Uksang Yoo, Jean Oh, Christopher G. Atkeson, Jeffrey Ichnowski",
+      skills: ["Soft Robotics", "Dynamic Manipulation", "In-Hand Manipulation", "RL/Auto-Labeling"],
+    },
+    {
       name: "Soft and Compliant Contact-Rich Hair Manipulation and Care",
       description:
-        "Research on soft and compliant contact-rich manipulation for hair care applications, exploring novel approaches to gentle robotic manipulation in personal care scenarios.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Soft Robotics", "Manipulation", "Contact-Rich Control", "Python"],
-    },
-    {
-      name: "Cloth-Splatting: 3D Cloth State Estimation from RGB Supervision",
-      description:
-        "Novel approach to 3D cloth state estimation using RGB supervision, advancing computer vision techniques for fabric manipulation and understanding.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Computer Vision", "3D Reconstruction", "Deep Learning", "Cloth Manipulation"],
-    },
-    {
-      name: "Work Smarter Not Harder: Simple Imitation Learning with CS-PIBT",
-      description:
-        "Research demonstrating that simple imitation learning with CS-PIBT outperforms large-scale imitation learning for Multi-Agent Path Finding (MAPF) problems.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Imitation Learning", "Multi-Agent Systems", "Path Planning", "Machine Learning"],
-    },
-    {
-      name: "State-to-Visual DAGGER vs Visual Reinforcement Learning",
-      description:
-        "Comparative study on when to prefer state-to-visual DAGGER over visual reinforcement learning in robotic applications.",
-      link: "https://momentum-robotics-lab.github.io/",
-      skills: ["Reinforcement Learning", "Computer Vision", "Robotics", "Deep Learning"],
+        "MOE-Hair soft robot with visual force sensing performs hair-care tasks with lower forces and improved comfort and effectiveness.",
+      link: "https://arxiv.org/abs/2501.02630",
+      subtitle: "Uksang Yoo, Nathaniel Dennler, Eliot Xing, Maja Matarić, Stefanos Nikolaidis, Jeffrey Ichnowski, Jean Oh",
+      skills: ["Soft Robotics", "Force Estimation", "Contact-Rich Manipulation", "HRI"],
     },
   ],
   members: {
@@ -169,7 +173,7 @@ export const siteConfig = {
       }
     ]
   },
-  education: [
+  research: [
     {
       school: "Stanford University",
       degree: "PhD in Computer Science",

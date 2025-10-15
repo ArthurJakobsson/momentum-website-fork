@@ -104,5 +104,6 @@ export const siteConfig = {
         googleScholar: "https://scholar.google.com/citations?user=-jYQuzMAAAAJ"
       }
     ]
-  }
+  },
+  research: []
 };
