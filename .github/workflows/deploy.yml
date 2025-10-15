@@ -26,10 +26,7 @@ jobs:
           path: .
           node-version: 20
           package-manager: npm@latest
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
+          action: build
 
   deploy:
     environment:
@@ -38,6 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          path: .
+          node-version: 20
+          package-manager: npm@latest
+          action: deploy
