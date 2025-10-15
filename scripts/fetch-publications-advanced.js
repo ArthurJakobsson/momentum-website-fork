@@ -59,7 +59,22 @@ async function fetchPublicationsFromScholar(scholarId, memberName) {
     // Wait for publications to load
     await page.waitForSelector('.gsc_a_tr', { timeout: 10000 });
 
-    // Extract publication data
+    // Keep clicking "Show more" to load all publications
+    const moreSelector = '#gsc_bpf_more';
+    for (let i = 0; i < 50; i++) { // hard cap to avoid infinite loops
+      const hasMoreButton = await page.$(moreSelector);
+      if (!hasMoreButton) break;
+      const isDisabled = await page.$eval(
+        moreSelector,
+        el => el.hasAttribute('disabled') || el.classList.contains('gs_dis') || (window.getComputedStyle(el).display === 'none')
+      ).catch(() => true);
+      if (isDisabled) break;
+      await page.click(moreSelector);
+      // Wait for additional rows to append
+      await (async (ms) => new Promise(res => setTimeout(res, ms)))(1200);
+    }
+
+    // Extract publication data (all loaded rows)
     const publications = await page.evaluate(() => {
       const pubElements = document.querySelectorAll('.gsc_a_tr');
       const results = [];
@@ -69,7 +84,7 @@ async function fetchPublicationsFromScholar(scholarId, memberName) {
           const titleElement = element.querySelector('.gsc_a_at');
           const authorsElement = element.querySelector('.gs_gray');
           const venueElement = element.querySelector('.gs_gray:last-child');
-          const yearElement = element.querySelector('.gsc_a_y');
+          const yearElement = element.querySelector('.gsc_a_y span');
 
           if (titleElement) {
             const title = titleElement.textContent.trim();
@@ -93,6 +108,9 @@ async function fetchPublicationsFromScholar(scholarId, memberName) {
 
       return results;
     });
+
+    // Sort by year descending (newest first)
+    publications.sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
 
     console.log(`Found ${publications.length} publications for ${memberName}`);
     return publications;

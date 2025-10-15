@@ -48,15 +48,14 @@ export const siteConfig = {
       title: "Assistant Professor at CMU Robotics Institute",
       email: "jichnow@cmu.edu",
       website: "https://ichnow.ski/",
+      linkedin: "https://www.linkedin.com/in/jeffichnowski/",
       photo: "/photos/jeffrey_ichnowski.jpg", // Placeholder - add actual photo
       education: [
         "B.A. Computer Science and Asian Studies, University of California at Berkeley",
         "Ph.D. Computational Robotics, University of North Carolina at Chapel Hill, 2019"
       ],
       postdoc: "Researcher in RISE lab, University of California at Berkeley, 2019-2022",
-      links: {
-        googleScholar: "https://scholar.google.com/citations?user=7CKFg9EAAAAJ"
-      }
+      googleScholar: "https://scholar.google.com/citations?user=7CKFg9EAAAAJ"
     },
     phdStudents: [
       {
@@ -64,35 +63,46 @@ export const siteConfig = {
         research: "Dexterous Manipulation",
         email: "hongyic@andrew.cmu.edu",
         photo: "/photos/hongyi_chen.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=Kg4GgV4AAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=Kg4GgV4AAAAJ",
+        website: "https://hychen-naza.github.io/"
       },
       {
         name: "Bardienus P. Duisterhof",
         research: "Vision foundation models for scalable automation",
         email: "bduister@andrew.cmu.edu",
         photo: "/photos/bardenius_duisterhof.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=LLsYMFYAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=LLsYMFYAAAAJ",
+        website: "https://bart-ai.com",
+        twitter: "https://x.com/BDuisterhof",
+        linkedin: "https://www.linkedin.com/in/duisterhof/"
       },
       {
         name: "Adam Hung",
         research: "Robotics Research",
-        email: "ahung@andrew.cmu.edu",
+        email: "adamhung@andrew.cmu.edu",
         photo: "/photos/adam_hung.png",
-        googleScholar: "https://scholar.google.com/citations?user=FCFyEYkAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=FCFyEYkAAAAJ",
+        website: "https://adamhung60.github.io/",
+        linkedin: "https://www.linkedin.com/in/adam-hung-389a38220/"
       },
       {
         name: "Yuemin Mao",
         research: "Dynamic Manipulation",
         email: "yueminm@andrew.cmu.edu",
         photo: "/photos/yuemin_mao.png",
-        googleScholar: "https://scholar.google.com/citations?user=eNF9ijoAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=eNF9ijoAAAAJ",
+        website: "https://yueminm.github.io/",
+        twitter: "https://twitter.com/YueminMao",
+        linkedin: "https://www.linkedin.com/in/yuemin-mao-02279a1a1/"
       },
       {
         name: "Uksang Yoo",
         research: "Dexterous in-hand manipulation",
         email: "uyoo@andrew.cmu.edu",
         photo: "/photos/uksang_yoo.png",
-        googleScholar: "https://scholar.google.com/citations?user=0bnaVQ8AAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=0bnaVQ8AAAAJ",
+        website: "https://uksangyoo.github.io",
+        twitter: "https://x.com/UksangYoo"
       }
     ],
     mastersStudents: [
@@ -101,14 +111,18 @@ export const siteConfig = {
         research: "ML-based Manipulation of Textiles",
         email: "ajakobss@cmu.edu",
         photo: "/photos/arthur_jakobsson.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=Uo2ibwcAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=Uo2ibwcAAAAJ",
+        website: "https://arthurjakobsson.com/",
+        linkedin: "https://www.linkedin.com/in/arthurjakobsson/"
       },
       {
         name: "Jeffrey Ke",
         research: "Demonstration learning for deformable object manipulation",
         email: "jke3@cs.cmu.edu",
         photo: "/photos/jeffery_ke.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=HRKvLJEAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=HRKvLJEAAAAJ",
+        twitter: "https://x.com/jeff_yy_ke",
+        linkedin: "https://www.linkedin.com/in/jeffke/"
       }
     ],
     undergraduateStudents: [
@@ -121,7 +135,10 @@ export const siteConfig = {
         research: "3D multimodal future with the fusion of 3D representation and Vision Language Models",
         email: "aviral@example.com", // Placeholder
         photo: "/photos/aviral_agrawal.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=NiW49k4AAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=NiW49k4AAAAJ",
+        website: "https://aviral-agrawal.github.io/",
+        linkedin: "https://www.linkedin.com/in/aviral-agrawal-783a01162",
+        twitter: "https://x.com/aviral__agrawal"
       },
       {
         name: "Yatharth Ahuja",
@@ -129,7 +146,9 @@ export const siteConfig = {
         research: "Failure Recovery in Manipulation Tasks",
         email: "yahuja@cs.cmu.edu",
         photo: "/photos/yatharth_ahuja.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=1T9f5GwAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=1T9f5GwAAAAJ",
+        website: "https://yatharthahuja.github.io/",
+        linkedin: "https://www.linkedin.com/in/yatharth-ahuja/"
       },
       {
         name: "Yunchao Yao",
@@ -145,7 +164,8 @@ export const siteConfig = {
         research: "Dense Scene Flow of Deformable Scenes",
         email: "joberst@andrew.cmu.edu",
         photo: "/photos/jan_oberst.jpg",
-        googleScholar: "https://scholar.google.com/citations?user=-jYQuzMAAAAJ"
+        googleScholar: "https://scholar.google.com/citations?user=-jYQuzMAAAAJ",
+        linkedin: "https://www.linkedin.com/in/jan-oberst-766103197/"
       }
     ]
   },

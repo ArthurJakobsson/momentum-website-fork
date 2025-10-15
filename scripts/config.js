@@ -12,9 +12,7 @@ export const siteConfig = {
         "Ph.D. Computational Robotics, University of North Carolina at Chapel Hill, 2019"
       ],
       postdoc: "Researcher in RISE lab, University of California at Berkeley, 2019-2022",
-      links: {
-        googleScholar: "https://scholar.google.com/citations?user=7CKFg9EAAAAJ"
-      }
+      googleScholar: "https://scholar.google.com/citations?user=7CKFg9EAAAAJ"
     },
     phdStudents: [
       {

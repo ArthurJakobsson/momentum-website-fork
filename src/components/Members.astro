@@ -8,7 +8,7 @@ const members = siteConfig.members;
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
       <div class="lg:col-span-4">
         <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-          Lab Members
+          Members
         </h2>
         <div
           class="w-[75px] h-[5px] mt-2 rounded-full"
@@ -63,28 +63,57 @@ const members = siteConfig.members;
                   </div>
 
                   <div class="flex flex-wrap gap-3 mt-4">
-                    <a
-                      href={`mailto:${members.principalInvestigator.email}`}
-                      class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                    >
-                      Email
-                    </a>
-                    <a
-                      href={members.principalInvestigator.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                    >
-                      Website
-                    </a>
-                    <a
-                      href={members.principalInvestigator.links.googleScholar}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                    >
-                      Google Scholar
-                    </a>
+                    {members.principalInvestigator.email && (
+                      <a
+                        href={`mailto:${members.principalInvestigator.email}`}
+                        class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+                        aria-label="Email"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path d="M3 7l9 6l9 -6"></path></svg>
+                      </a>
+                    )}
+                    {members.principalInvestigator.website && (
+                      <a
+                        href={members.principalInvestigator.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                      >
+                        Website
+                      </a>
+                    )}
+                    {members.principalInvestigator.links?.googleScholar && (
+                      <a
+                        href={members.principalInvestigator.links.googleScholar}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                      >
+                        Google Scholar
+                      </a>
+                    )}
+                    {members.principalInvestigator.linkedin && (
+                      <a
+                        href={members.principalInvestigator.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+                        aria-label="LinkedIn"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0 -4 0"></path><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path></svg>
+                      </a>
+                    )}
+                    {members.principalInvestigator.github && (
+                      <a
+                        href={members.principalInvestigator.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-sm px-3 py-1 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+                        aria-label="GitHub"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -95,7 +124,7 @@ const members = siteConfig.members;
           {members.phdStudents.length > 0 && (
             <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
               <h3 class="text-2xl font-bold text-gray-900 mb-6" style={`color: ${siteConfig.accentColor}`}>
-                Current PhD Students
+                PhD Students
               </h3>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -119,12 +148,70 @@ const members = siteConfig.members;
                       <p class="text-sm text-gray-600 mb-2">
                         {student.research}
                       </p>
-                      <a
-                        href={`mailto:${student.email}`}
-                        class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                      >
-                        Contact
-                      </a>
+                      <div class="flex flex-wrap gap-2">
+                        {student.email && (
+                          <a
+                            href={`mailto:${student.email}`}
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Email"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path d="M3 7l9 6l9 -6"></path></svg>
+                          </a>
+                        )}
+                        {student.website && (
+                          <a
+                            href={student.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Website
+                          </a>
+                        )}
+                        {student.linkedin && (
+                          <a
+                            href={student.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="LinkedIn"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0 -4 0"></path><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path></svg>
+                          </a>
+                        )}
+                        {student.googleScholar && (
+                          <a
+                            href={student.googleScholar}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Scholar
+                          </a>
+                        )}
+                        {student.github && (
+                          <a
+                            href={student.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="GitHub"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+                          </a>
+                        )}
+                        {student.twitter && (
+                          <a
+                            href={student.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Twitter"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -132,11 +219,11 @@ const members = siteConfig.members;
             </div>
           )}
 
-          {/* Master's Students */}
+          {/* Masters Students */}
           {members.mastersStudents.length > 0 && (
             <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-300">
               <h3 class="text-2xl font-bold text-gray-900 mb-6" style={`color: ${siteConfig.accentColor}`}>
-                Master's Students
+                Master Students
               </h3>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -160,12 +247,70 @@ const members = siteConfig.members;
                       <p class="text-sm text-gray-600 mb-2">
                         {student.research}
                       </p>
-                      <a
-                        href={`mailto:${student.email}`}
-                        class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                      >
-                        Contact
-                      </a>
+                      <div class="flex flex-wrap gap-2">
+                        {student.email && (
+                          <a
+                            href={`mailto:${student.email}`}
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Email"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path d="M3 7l9 6l9 -6"></path></svg>
+                          </a>
+                        )}
+                        {student.website && (
+                          <a
+                            href={student.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Website
+                          </a>
+                        )}
+                        {student.linkedin && (
+                          <a
+                            href={student.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="LinkedIn"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0 -4 0"></path><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path></svg>
+                          </a>
+                        )}
+                        {student.googleScholar && (
+                          <a
+                            href={student.googleScholar}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Google Scholar
+                          </a>
+                        )}
+                        {student.github && (
+                          <a
+                            href={student.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="GitHub"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+                          </a>
+                        )}
+                        {student.twitter && (
+                          <a
+                            href={student.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Twitter"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -245,12 +390,70 @@ const members = siteConfig.members;
                       <p class="text-sm text-gray-600 mb-2">
                         {alumnus.research}
                       </p>
-                      <a
-                        href={`mailto:${alumnus.email}`}
-                        class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
-                      >
-                        Contact
-                      </a>
+                      <div class="flex flex-wrap gap-2">
+                        {alumnus.email && (
+                          <a
+                            href={`mailto:${alumnus.email}`}
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Email"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path><path d="M3 7l9 6l9 -6"></path></svg>
+                          </a>
+                        )}
+                        {alumnus.website && (
+                          <a
+                            href={alumnus.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Website
+                          </a>
+                        )}
+                        {alumnus.linkedin && (
+                          <a
+                            href={alumnus.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="LinkedIn"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M16 16v-3a2 2 0 1 0 -4 0"></path><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z"></path></svg>
+                          </a>
+                        )}
+                        {alumnus.googleScholar && (
+                          <a
+                            href={alumnus.googleScholar}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors"
+                          >
+                            Scholar
+                          </a>
+                        )}
+                        {alumnus.github && (
+                          <a
+                            href={alumnus.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="GitHub"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path></svg>
+                          </a>
+                        )}
+                        {alumnus.twitter && (
+                          <a
+                            href={alumnus.twitter}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-xs px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors inline-flex items-center gap-1.5"
+                            aria-label="Twitter"
+                          >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))}
